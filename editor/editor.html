@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header">
+      <button id="btnInicio">início</button>
+      <button id="btnModelos">Modelos</button>
+      <button id="btnEditor">Editor</button>
+      <button id="btnSobre">Sobre</button>
+    </header>
+    <div id="conteudo">
+        <div class="opcao">
+            <input type="text" id="inputNome" placeholder="Nome">
+            <input type="text" id="inputData" placeholder="Data">
+            <input type="text" id="inputEmail" placeholder="Email">
+            <input type="date" id="inputNumero" placeholder="Numero">
+            <textarea id="campoObjetico" placeholder="Objetivo"></textarea>
+            <textarea id="campoResumo" placeholder="Resumo"></textarea>
+            <textarea id="campoHabilidades" placeholder="Habilidades"></textarea>
+            <textarea id="campoEducacao" placeholder="Educação"></textarea>
+            <textarea id="campoExperiencia" placeholder="Experiencia"></textarea>
+        </div>
+        <iframe src="./templates/outro.html" frameborder="0" allowfullscreen id="frame" height=95% width=40%></iframe>
+      </div>
+      <script src="editor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+:root{
+    --corDestaque: #12ff80;
+    --borda: 25px;
+}
+body{
+    background-image: url("../fundo.png");
+    margin: 0;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cor de fundo similar à imagem */
+
+}
+
+header{
+    background-color: white;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 39px;
+}
+#btnInicio{
+    background: none;
+    border: none;
+    color: var(--corDestaque);
+    font-size: 20px;
+
+}
+
+#btnModelos{
+    background: none;
+    border: none;
+    color: var(--corDestaque);
+    font-size: 20px;
+
+}
+
+#btnSobre{
+    background: none;
+    border: none;
+    color: var(--corDestaque);
+    font-size: 20px;
+
+}
+
+#btnEditor{
+    background: var(--corDestaque);
+    border-radius: var(--borda);
+    border: none;
+    color: white;
+    font-size: 20px;
+
+}
+
+#conteudo{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: calc(100vh - 100px);
+    margin-left: 30%;
+}
+
+.opcao{
+    display: flex;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: fit-content;
+    max-width: 400px;
+    background: white;
+    padding: 15px;
+    border-radius: var(--borda);
+    overflow-y: auto;
+}
+.opcao > *{
+    border: 1px gray solid;
+    padding: 10px;
+    border-radius: var(--borda);
+    flex: 1 1 45%;
+
+}
+textarea{
+    resize: none;
+}
+#frame{
+    border-radius: 2px;
+}
