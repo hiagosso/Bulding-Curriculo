@@ -1,0 +1,83 @@
+body{
+    background-image: url("./fundo.png");
+    margin: 0;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #23B14D; /* Cor de fundo similar à imagem */
+
+}
+
+#altf4{
+    background-color: white;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#botao{
+    background: none;
+    border: none;
+    color: #12ff80;
+    font-size: 20px;
+
+}
+
+#bolsonaro {
+    color: #23B14D; /* Cor do título similar ao botão */
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+#botao1{ /* bitao normal sem mouse em cima */
+    background-color: #12ff80;
+    border: #12ff80;
+    border-radius: 25px;
+    font-size: 20px;
+    color: white;
+     cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+#botao1:hover{ /* botao quando o mouse estiver encimac*/
+    background-color: #1a8e3d;
+     cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.card-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 40px 60px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+.btn-comecar {
+    background-color: #12ff80; /* Cor do botão similar à imagem */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Botão arredondado */
+    padding: 15px 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    
+}
+
+.btn-comecar:hover {
+    background-color: #1a8e3d; /* Um tom um pouco mais escuro ao passar o mouse */
+    transition: background-color 0.3s ease;
+}
