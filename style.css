@@ -9,7 +9,7 @@ body{
 
 }
 
-#altf4{
+#cabecalho{
     background-color: white;
     padding: 2%;
     display: flex;
@@ -18,7 +18,7 @@ body{
     gap: 10px;
 }
 
-#botao{
+#btn{
     background: none;
     border: none;
     color: #12ff80;
@@ -26,13 +26,13 @@ body{
 
 }
 
-#bolsonaro {
-    color: #23B14D; /* Cor do título similar ao botão */
+#Titulo {
+    color: #12ff80; /* Cor do título similar ao botão */
     margin-bottom: 30px;
     font-size: 2em;
 }
 
-#botao1{ /* bitao normal sem mouse em cima */
+#btnInicio{ /* bitao normal sem mouse em cima */
     background-color: #12ff80;
     border: #12ff80;
     border-radius: 25px;
@@ -43,7 +43,7 @@ body{
 
 }
 
-#botao1:hover{ /* botao quando o mouse estiver encimac*/
+#btnInicio:hover{ /* btn quando o mouse estiver encimac*/
     background-color: #1a8e3d;
      cursor: pointer;
     transition: background-color 0.3s ease;
@@ -164,7 +164,7 @@ font-weight: bold;
             width: 90%;
         }
     }
-#diabo{
+#modelos{
 font-family: Arial, sans-serif;
 margin: 0;
 padding: 0;
@@ -172,4 +172,9 @@ background-color: #e0e0e0; /* Cor de fundo aproximada do layout geral */
 display: flex;
 flex-direction: column;
 min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }

@@ -2,6 +2,19 @@
     --corDestaque: #12ff80;
     --borda: 25px;
 }
+a{
+    text-decoration: none;
+    color: var(--corDestaque);
+    transition: 1s;
+    
+}
+a:hover{
+    text-decoration: none;
+    color: var(--corDestaque);
+    font-size: larger;
+      transition: 1s;
+
+}
 body{
     background-image: url("../fundo.png");
     margin: 0;
@@ -9,6 +22,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Cor de fundo similar à imagem */
+    transition: 1s;
 
 }
 
