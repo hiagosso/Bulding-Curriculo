@@ -3,29 +3,35 @@
     --borda: 15px;
 }
 
-body {
-    background-image: url("./fundo.png");
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: sans-serif;
-    min-height: 100vh;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("./fundo.png");
     background-color: var(--corDestaque);
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
+/* HEADER */
 header#cabecalho {
     background-color: white;
-    padding: 1%;
+    padding: 10px 5%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Mantém todos os itens em uma linha */
 }
 
 header#cabecalho button {
@@ -36,7 +42,8 @@ header#cabecalho button {
     padding: 8px 12px;
     cursor: pointer;
     border-radius: var(--borda);
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Impede quebra de texto */
 }
 
 header#cabecalho button:hover {
@@ -44,11 +51,11 @@ header#cabecalho button:hover {
     color: white;
 }
 
+/* CARD PRINCIPAL */
 .card-container {
-    padding: 100px 20px 20px; /* Top padding maior por conta do cabeçalho fixo */
+    padding: 120px 20px 20px; /* Espaço superior por conta do header fixo */
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
 }
 
@@ -57,7 +64,7 @@ header#cabecalho button:hover {
     border-radius: 15px;
     padding: 40px 30px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     max-width: 500px;
     width: 100%;
 }
@@ -83,15 +90,14 @@ header#cabecalho button:hover {
     background-color: #1a8e3d;
 }
 
-/* Modelos Section */
+/* SEÇÃO MODELOS */
 #modelos {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 50px 20px 20px;
     background-color: #e0e0e0;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .main-container {
@@ -114,9 +120,9 @@ header#cabecalho button:hover {
 
 .cards-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -124,7 +130,7 @@ header#cabecalho button:hover {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     flex: 1 1 280px; /* Flexível, mínimo 280px */
     max-width: 32%; /* Aproximadamente 3 cards por linha */
     display: flex;
@@ -150,7 +156,7 @@ header#cabecalho button:hover {
     color: #555;
 }
 
-/* Footer */
+/* FOOTER */
 .footer-nav {
     background-color: #2e8b57;
     padding: 15px;
@@ -158,8 +164,8 @@ header#cabecalho button:hover {
     display: flex;
     justify-content: center;
     gap: 40px;
-    width: 100%;
     flex-wrap: wrap;
+    width: 100%;
     margin-top: 50px;
 }
 
@@ -170,18 +176,25 @@ header#cabecalho button:hover {
     font-weight: bold;
 }
 
-/* Responsividade */
+/* RESPONSIVIDADE */
+
+/* Tablets */
 @media (max-width: 1024px) {
     .cards-container .card {
         max-width: 45%;
     }
 }
 
+/* Celulares */
 @media (max-width: 768px) {
     header#cabecalho {
-        flex-direction: column;
-        gap: 5px;
-        padding: 10px 5px;
+        justify-content: space-around; /* distribui os botões uniformemente */
+        padding: 8px 10px;
+    }
+
+    header#cabecalho button {
+        font-size: 14px;
+        padding: 6px 8px;
     }
 
     .main-title {
@@ -199,6 +212,7 @@ header#cabecalho button:hover {
     }
 }
 
+/* Telas muito pequenas */
 @media (max-width: 480px) {
     #Titulo {
         font-size: 1.5em;
@@ -209,8 +223,8 @@ header#cabecalho button:hover {
     }
 
     header#cabecalho button {
-        font-size: 16px;
-        padding: 6px 10px;
+        font-size: 12px;
+        padding: 4px 6px;
     }
 
     .footer-nav {
