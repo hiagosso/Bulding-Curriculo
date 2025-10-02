@@ -79,7 +79,7 @@ header#cabecalho button:hover {
 .opcao input,
 .opcao textarea {
     border: 1px gray solid;
-    padding: 12px;
+    padding: 16px; /* aumento do padding para maior conforto */
     border-radius: var(--borda);
     width: 100%;
     resize: none; /* desativa redimensionamento */
