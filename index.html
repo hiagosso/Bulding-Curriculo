@@ -9,18 +9,16 @@
 
   <body>
     <header id="cabecalho">
-      <button id="btnInicio">início</button>
-      <button id="btn">Modelos</button>
-      <button id="btn">Editor</button>
-      <button id="btn">Sobre</button>
+      <button id="btn" onclick="location.href='./index.html'">Início</button>
+      <button id="btn" onclick="location.href='./index.html#modelos'">Modelos</button>
+      <button id="btn" onclick="location.href='./editor/editor.html'">Editor</button>
+      <button id="btn" onclick="location.href='./index.html#Sobre'">Sobre</button>
     </header>
 
     <div class="card-container">
       <div class="card">
         <h1 id="Titulo">Crie seu Currículo</h1>
-        <button class="btn-comecar">
-          <a href="./editor/editor.html">Começar</a>
-        </button>
+        <button class="btn-comecar" onclick="location.href='./editor/editor.html'">Começar</button>
       </div>
     </div>
 
@@ -46,7 +44,7 @@
         </div>
       </div>
 
-      <div class="footer-nav">
+      <div class="footer-nav" id="Sobre">
         <a href="#">Sobre</a>
         <a href="#">Contate-nos</a>
       </div>

@@ -1,0 +1,136 @@
+:root {
+    --corDestaque: #12ff80;
+    --borda: 15px;
+}
+
+body {
+    background-image: url("../fundo.png");
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+header button {
+    background: none;
+    border: none;
+    color: var(--corDestaque);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Conteúdo principal lado a lado */
+#conteudo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Formulário */
+.opcao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 400px;
+    background: white;
+    padding: 15px;
+    border-radius: var(--borda);
+    max-height: 90vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.opcao> input, textarea {
+    border: 1px gray solid;
+    padding: 10px;
+    border-radius: var(--borda);
+    flex: 1 1 100%;
+}
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 5px;
+    border: 1px solid gray;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+textarea {
+    resize: none;
+}
+
+
+#frame {
+    width: 600px;
+    height: 90vh;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+#btn {
+    background: none;
+    border: none;
+    color: var(--corDestaque);
+    font-size: 20px;
+
+}
+
+#btn:hover {
+    /* btn quando o mouse estiver encimac*/
+    background-color: #1a8e3d;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: var(--borda);
+
+
+}
+
+#btn-pdf {
+    background-color: var(--corDestaque);
+    /* Cor do botão similar à imagem */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    /* Botão arredondado */
+    padding: 15px 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    flex: 1 1 100%;
+
+}
+
+#btn-pdf:hover {
+    background-color: #1a8e3d;
+    /* Um tom um pouco mais escuro ao passar o mouse */
+    transition: background-color 0.3s ease;
+}
+
+/* Para o formulário */
+.opcao {
+    overflow-y: scroll;
+    /* ou auto */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.opcao::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Edge, Safari */
+}
+
+/* Para o iframe */
+#meuIframe {
+    overflow: hidden;
+    /* esconde barra, mas o iframe interno pode rolar se tiver scroll interno */
+}

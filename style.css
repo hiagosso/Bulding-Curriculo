@@ -1,3 +1,8 @@
+:root {
+    --corDestaque: #12ff80;
+    --borda: 15px;
+}
+
 body{
     background-image: url("./fundo.png");
     margin: 0;
@@ -5,50 +10,43 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #23B14D; /* Cor de fundo similar à imagem */
+    background-color: var(--corDestaque); /* Cor de fundo similar à imagem */
 
 }
 
-#cabecalho{
+#cabecalho {
     background-color: white;
-    padding: 2%;
+    padding: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    position: fixed;
+    width: 100%;
 }
 
 #btn{
     background: none;
     border: none;
-    color: #12ff80;
+    color: var(--corDestaque);
     font-size: 20px;
+
+}
+#btn:hover{ /* btn quando o mouse estiver encimac*/
+    background-color: #1a8e3d;
+     cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: var(--borda);
+
 
 }
 
 #Titulo {
-    color: #12ff80; /* Cor do título similar ao botão */
+    color: var(--corDestaque); /* Cor do título similar ao botão */
     margin-bottom: 30px;
     font-size: 2em;
 }
 
-#btnInicio{ /* bitao normal sem mouse em cima */
-    background-color: #12ff80;
-    border: #12ff80;
-    border-radius: 25px;
-    font-size: 20px;
-    color: white;
-     cursor: pointer;
-    transition: background-color 0.3s ease;
-
-}
-
-#btnInicio:hover{ /* btn quando o mouse estiver encimac*/
-    background-color: #1a8e3d;
-     cursor: pointer;
-    transition: background-color 0.3s ease;
-
-}
 
 .card-container {
     padding: 20px;
@@ -67,7 +65,7 @@ body{
 }
 
 .btn-comecar {
-    background-color: #12ff80; /* Cor do botão similar à imagem */
+    background-color: var(--corDestaque); /* Cor do botão similar à imagem */
     color: white;
     border: none;
     border-radius: 50px; /* Botão arredondado */
@@ -172,9 +170,4 @@ background-color: #e0e0e0; /* Cor de fundo aproximada do layout geral */
 display: flex;
 flex-direction: column;
 min-height: 100vh;
-}
-
-a{
-    text-decoration: none;
-    color: white;
 }
