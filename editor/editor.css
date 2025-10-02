@@ -86,6 +86,8 @@ header#cabecalho button:hover {
     overflow: hidden; /* remove scrollbar interna */
     font-size: 1em;
     line-height: 1.4em;
+    white-space: pre-wrap; /* mantém \n e quebra automática */
+  word-wrap: break-word; /* força quebra de palavras longas */
 }
 
 input[type="color"] {
