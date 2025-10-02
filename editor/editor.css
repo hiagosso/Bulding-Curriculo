@@ -3,134 +3,181 @@
     --borda: 15px;
 }
 
-body {
-    background-image: url("../fundo.png");
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: sans-serif;
+    background-image: url("../fundo.png");
     min-height: 100vh;
 }
 
-/* Header */
-header {
+/* HEADER */
+header#cabecalho {
     background-color: white;
-    padding: 10px;
+    padding: 10px 5%;
     display: flex;
     justify-content: center;
     gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: nowrap; /* Mantém todos os itens em uma linha */
 }
 
-header button {
+header#cabecalho button {
     background: none;
     border: none;
     color: var(--corDestaque);
     font-size: 18px;
     cursor: pointer;
+    white-space: nowrap; /* Evita quebra de texto */
+    border-radius: var(--borda);
+    padding: 8px 12px;
+    transition: all 0.3s ease;
 }
 
-/* Conteúdo principal lado a lado */
+header#cabecalho button:hover {
+    background-color: #1a8e3d;
+    color: white;
+}
+
+/* CONTEÚDO PRINCIPAL */
 #conteudo {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
+    flex-wrap: wrap; /* Permite que formulário e iframe quebrem linha em telas pequenas */
 }
 
-/* Formulário */
+/* FORMULÁRIO */
 .opcao {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
     width: 400px;
+    max-width: 100%;
     background: white;
     padding: 15px;
     border-radius: var(--borda);
     max-height: 90vh;
     overflow-y: auto;
     flex-shrink: 0;
+    scrollbar-width: none; /* Firefox */
 }
 
-.opcao> input, textarea {
+.opcao::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
+}
+
+.opcao input,
+.opcao textarea {
     border: 1px gray solid;
     padding: 10px;
     border-radius: var(--borda);
-    flex: 1 1 100%;
+    width: 100%;
 }
+
 input[type="color"] {
     width: 40px;
     height: 40px;
     padding: 0;
     border-radius: 5px;
     border: 1px solid gray;
-    flex: 0 0 auto;
     cursor: pointer;
 }
-textarea {
-    resize: none;
-}
 
-
-#frame {
-    width: 600px;
-    height: 90vh;
-    border-radius: 5px;
-    flex-shrink: 0;
-}
-
-#btn {
-    background: none;
-    border: none;
-    color: var(--corDestaque);
-    font-size: 20px;
-
-}
-
-#btn:hover {
-    /* btn quando o mouse estiver encimac*/
-    background-color: #1a8e3d;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: var(--borda);
-
-
-}
-
+/* BOTÃO PDF */
 #btn-pdf {
     background-color: var(--corDestaque);
-    /* Cor do botão similar à imagem */
     color: white;
     border: none;
     border-radius: 50px;
-    /* Botão arredondado */
-    padding: 15px 40px;
-    font-size: 1.2em;
+    padding: 15px;
+    font-size: 1.1em;
     cursor: pointer;
-    flex: 1 1 100%;
-
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 #btn-pdf:hover {
     background-color: #1a8e3d;
-    /* Um tom um pouco mais escuro ao passar o mouse */
-    transition: background-color 0.3s ease;
 }
 
-/* Para o formulário */
-.opcao {
-    overflow-y: scroll;
-    /* ou auto */
-    scrollbar-width: none;
-    /* Firefox */
-}
-
-.opcao::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Edge, Safari */
-}
-
-/* Para o iframe */
+/* IFRAME */
 #meuIframe {
-    overflow: hidden;
-    /* esconde barra, mas o iframe interno pode rolar se tiver scroll interno */
+    flex: 1 1 600px; /* Ocupa espaço restante */
+    min-width: 300px;
+    height: 90vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    #conteudo {
+        gap: 15px;
+    }
+
+    .opcao {
+        width: 350px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    #conteudo {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header#cabecalho {
+        justify-content: space-around; /* distribui botões uniformemente */
+        padding: 8px 5%;
+    }
+
+    header#cabecalho button {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+
+    .opcao {
+        width: 90%;
+        max-height: 50vh;
+    }
+
+    #meuIframe {
+        width: 90%;
+        height: 50vh;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    header#cabecalho button {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    .opcao {
+        padding: 10px;
+    }
+
+    #btn-pdf {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    #meuIframe {
+        height: 40vh;
+    }
 }
