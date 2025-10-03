@@ -52,7 +52,7 @@ header#cabecalho button:hover {
   flex-direction: row;
   gap: 20px;
   /* ajuste para menos se quiser */
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 20px 0;
   /* remove padding vertical excessivo */
