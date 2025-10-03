@@ -1,22 +1,24 @@
 :root {
   --corDestaque: #12ff80;
   --borda: 15px;
+
 }
 
-/* Reset geral */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+
 body {
   font-family: sans-serif;
-  background-image: url("../fundo.png");
+  background: var(--corDestaque);
   min-height: 100vh;
 }
 
-/* HEADER */
+
 header#cabecalho {
     background-color: white;
     padding: 10px 5%;
@@ -30,6 +32,7 @@ header#cabecalho {
     z-index: 100;
     flex-wrap: nowrap; /* Mantém todos os itens em uma linha */
 }
+
 
 header#cabecalho button {
   background: none;
@@ -48,233 +51,11 @@ header#cabecalho button:hover {
   color: white;
 }
 
-/* CONTEÚDO PRINCIPAL */
-#conteudo {
+main{
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  /* ajuste para menos se quiser */
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 0;
-  /* remove padding vertical excessivo */
   flex-wrap: wrap;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-/* FORMULÁRIO */
-.opcao {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 400px;
-  max-width: 100%;
-  background: white;
-  padding: 15px;
-  border-radius: var(--borda);
-  max-height: 90vh;
-  overflow-y: auto;
-  flex-shrink: 0;
-
-  /* Scrollbar futurista */
-  scrollbar-width: thin;
-  /* Firefox */
-  scrollbar-color: var(--corDestaque) transparent;
-}
-
-/* Inputs e textareas */
-.opcao input,
-.opcao textarea {
-  border: 1px gray solid;
-  padding: 40px;
-  border-radius: var(--borda);
-  width: 100%;
-  resize: none;
-  overflow-wrap: break-word;
-  font-size: 1em;
-  line-height: 1.4em;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/* input de cor */
-.opcao input[type="color"] {
-  width: 2rem;
-  height: 2rem;
-  padding: 0; /* remove padding que achatava */
-  border-radius: 8px;
-  cursor: pointer;
-  flex: 0 0 auto; /* não cresce no flex */
-}
-.opcao input:not([type="color"]) {
-  padding: 12px; /* padding normal só para inputs de texto */
-}
-
-/* BOTÃO PDF */
-#btn-pdf {
-  background-color: var(--corDestaque);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  font-size: 1.1em;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
-}
-
-#btn-pdf:hover {
-  background-color: #1a8e3d;
-}
-
-/* IFRAME */
-#meuIframe {
-  flex: 1 1 600px;
-  min-width: 300px;
-  height: auto; /* será ajustado via JS */
-  max-height: 90vh; /* limita para telas pequenas */
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  display: block;
-}
-
-/* SCROLLBAR FUTURISTA - Chrome, Edge, Safari */
-.opcao::-webkit-scrollbar {
-  width: 6px;
-  /* barra fina */
-}
-
-.opcao::-webkit-scrollbar-track {
-  background: transparent;
-  /* totalmente transparente */
-}
-
-.opcao::-webkit-scrollbar-thumb {
-  background-color: rgba(18, 255, 128, 0.7);
-  /* thumb semi-transparente */
-  border-radius: 10px;
-  border: 2px solid transparent;
-  opacity: 0;
-  /* invisível por padrão */
-  transition: opacity 0.5s ease, background-color 0.3s ease;
-}
-
-.opcao:hover::-webkit-scrollbar-thumb,
-.opcao:active::-webkit-scrollbar-thumb {
-  opacity: 1;
-  /* aparece ao passar o mouse ou rolar */
-}
-
-/* Remove completamente setas */
-.opcao::-webkit-scrollbar-button {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-.opcao::-webkit-scrollbar-button:single-button {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-/* RESPONSIVIDADE */
-
-/* Tablets */
-@media (max-width: 1024px) {
-  #conteudo {
-    gap: 15px;
-  }
-
-  .opcao {
-    width: 350px;
-  }
-}
-
-/* Celulares */
-@media (max-width: 768px) {
-  #conteudo {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  header#cabecalho {
-    justify-content: space-around;
-    padding: 8px 5%;
-  }
-
-  header#cabecalho button {
-    font-size: 14px;
-    padding: 6px 8px;
-  }
-
-  .opcao {
-    width: 90%;
-    max-height: 50vh;
-    padding: 15px;
-    gap: 12px;
-  }
-
-  #meuIframe {
-    width: 90%;
-    height: 50vh;
-  }
-}
-
-/* Telas muito pequenas */
-@media (max-width: 480px) {
-  header#cabecalho button {
-    font-size: 12px;
-    padding: 4px 6px;
-  }
-
-  .opcao {
-    padding: 10px;
-    gap: 10px;
-  }
-
-  #btn-pdf {
-    padding: 10px;
-    font-size: 1em;
-  }
-
-  #meuIframe {
-    height: 40vh;
-  }
-}
-
-/* CSS para PDF ABNT */
-@media print {
-  body {
-    font-family: "Times New Roman", serif;
-    font-size: 12pt;
-    line-height: 1.5;
-    margin-top: 3cm;
-    margin-bottom: 2cm;
-    margin-left: 3cm;
-    margin-right: 2cm;
-    text-align: justify;
-    background: none !important;
-  }
-
-  h1,
-  h2,
-  h3 {
-    text-align: center;
-    margin: 0;
-  }
-
-  p {
-    text-indent: 1.25cm;
-    margin: 0 0 10px 0;
-  }
-
-  .citações {
-    font-size: 10pt;
-    line-height: 1;
-    margin: 0;
-    text-indent: 0;
-  }
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
 }
