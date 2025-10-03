@@ -12,6 +12,17 @@
         width: 210mm; /* largura A4 */
         min-height: 297mm; /* altura A4 */
       }
+      @media print {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          height: 297mm; /* altura A4 */
+          width: 210mm; /* largura A4 */
+          padding: 10mm 0 0 0; /* padding mínimo no topo */
+        }
+
+      }
     </style>
   </head>
 
@@ -29,7 +40,8 @@
     <br />
     <hr />
     <br />
-    <h1>Resumo</h1><br>
+    <h1>Resumo</h1>
+    <br />
     <p id="resumo">texto</p>
     <br />
     <hr />
