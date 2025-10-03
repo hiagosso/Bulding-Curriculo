@@ -100,9 +100,13 @@ header#cabecalho button:hover {
 .opcao input[type="color"] {
   width: 2rem;
   height: 2rem;
-  padding: 0;
+  padding: 0; /* remove padding que achatava */
   border-radius: 8px;
   cursor: pointer;
+  flex: 0 0 auto; /* não cresce no flex */
+}
+.opcao input:not([type="color"]) {
+  padding: 12px; /* padding normal só para inputs de texto */
 }
 
 /* BOTÃO PDF */
@@ -124,16 +128,14 @@ header#cabecalho button:hover {
 
 /* IFRAME */
 #meuIframe {
-    flex: 1 1 600px;
-    min-width: 300px;
-    height: auto;       /* será ajustado via JS */
-    max-height: 90vh;   /* limita para telas pequenas */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    display: block;
+  flex: 1 1 600px;
+  min-width: 300px;
+  height: auto; /* será ajustado via JS */
+  max-height: 90vh; /* limita para telas pequenas */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: block;
 }
-
-
 
 /* SCROLLBAR FUTURISTA - Chrome, Edge, Safari */
 .opcao::-webkit-scrollbar {
