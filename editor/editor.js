@@ -1,45 +1,45 @@
 const frame = document.getElementById("meuIframe");
 
-// pega todos os campos do editor
-const campoNome = document.getElementById("inputNome");
-const campoNumero = document.getElementById("inputNumero");
-const campoEmail = document.getElementById("inputEmail");
-const campoObjetivo = document.getElementById("campoObjetico");
-const campoResumo = document.getElementById("campoResumo");
-const campoHabilidades = document.getElementById("campoHabilidades");
-const campoEducacao = document.getElementById("campoEducacao");
-const campoExperiencia = document.getElementById("campoExperiencia");
-const colorText = document.getElementById("colorText");
-
 function atualizarIframe() {
   const doc = frame.contentWindow.document;
+  if (!doc) return;
 
-  doc.body.style.color = colorText.value;
-  
-  const nome = doc.getElementById("nome");
-  const numero = doc.getElementById("numero");
-  const email = doc.getElementById("email");
-  const objetivo = doc.getElementById("objetivo");
-  const resumo = doc.getElementById("resumo");
-  const habilidades = doc.getElementById("habilidades");
-  const educacao = doc.getElementById("educacao");
-  const experiencia = doc.getElementById("experiencia");
+  // Atualiza campos
+  const campos = [
+    { id: "nome", value: document.getElementById("inputNome").value },
+    { id: "numero", value: document.getElementById("inputNumero").value },
+    { id: "email", value: document.getElementById("inputEmail").value },
+    { id: "objetivo", value: document.getElementById("campoObjetico").value },
+    { id: "resumo", value: document.getElementById("campoResumo").value },
+    {
+      id: "habilidades",
+      value: document.getElementById("campoHabilidades").value,
+    },
+    { id: "educacao", value: document.getElementById("campoEducacao").value },
+    {
+      id: "experiencia",
+      value: document.getElementById("campoExperiencia").value,
+    },
+  ];
 
-  if (nome) nome.innerText = campoNome.value;
-  if (numero) numero.innerText = campoNumero.value;
-  if (email) email.innerText = campoEmail.value;
-  if (objetivo) objetivo.innerText = campoObjetivo.value;
-  if (resumo) resumo.innerText = campoResumo.value;
-  if (habilidades) habilidades.innerText = campoHabilidades.value;
-  if (educacao) educacao.innerText = campoEducacao.value;
-  if (experiencia) experiencia.innerText = campoExperiencia.value;
+  campos.forEach((c) => {
+    const el = doc.getElementById(c.id);
+    if (el) el.innerText = c.value;
+  });
+
+  // Atualiza cor
+  doc.body.style.color = document.getElementById("colorText").value;
+
+  // Ajusta altura do iframe dinamicamente
+  setTimeout(() => {
+    frame.style.height = doc.body.scrollHeight + "px";
+  }, 50);
 }
 
-// adiciona evento para atualizar em tempo real
+// Eventos
 const inputs = document.querySelectorAll("input, textarea");
-inputs.forEach((el) => {
-  el.addEventListener("input", atualizarIframe);
-});
+inputs.forEach((el) => el.addEventListener("input", atualizarIframe));
+document.getElementById("colorText").addEventListener("input", atualizarIframe);
 
-// atualiza também logo que o iframe terminar de carregar
+// Ajusta altura logo que o iframe carrega
 frame.addEventListener("load", atualizarIframe);
