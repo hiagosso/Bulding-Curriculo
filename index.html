@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <header id="cabecalho">
-      <button id="btn" onclick="location.href='./index.html'">Início</button>
-      <button id="btn" onclick="location.href='./editor/editor.html'">Editor</button>
-      <button id="btn" onclick="location.href='./index.html#Sobre'">Sobre</button>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Currículo Online</title>
+</head>
 
-    <div class="card-container">
-      <div class="card">
-        <h1 id="Titulo">Crie seu Currículo</h1>
-        <button class="btn-comecar" onclick="location.href='./editor/editor.html'">Começar</button>
-      </div>
+<body>
+  <header id="cabecalho">
+    <button onclick="location.href='./index.html'">Início</button>
+    <button onclick="location.href='./editor/editor.html'">Editor</button>
+    <button onclick="location.href='./index.html#Sobre'">Sobre</button>
+  </header>
+
+  <div class="card-container">
+    <div class="card">
+      <h1 id="Titulo">Crie seu Currículo</h1>
+      <button class="btn-comecar" onclick="location.href='./editor/editor.html'">Começar</button>
     </div>
+  </div>
 
+  <div class="footer-nav" id="Sobre">
+    <p><strong>Sobre</strong></p>
+    <p class="texto-sobre">
+      Este site foi desenvolvido como parte de um Trabalho de Conclusão de Curso e tem como objetivo oferecer uma forma
+      prática e rápida de criar um currículo profissional.
+      <br><br>
+      A plataforma disponibiliza um único modelo de currículo, pensado para ser simples, organizado e compatível com as
+      exigências mais comuns do mercado de trabalho. O usuário só precisa preencher seus dados e, em poucos cliques,
+      gera um currículo pronto para download em PDF.
+    </p>
+    <p><strong>Contate-nos</strong></p>
+    <p>souza8hiago@gmail.com</p>
+  </div>
+</body>
 
-      <div class="footer-nav" id="Sobre">
-        <a href="#">Sobre</a>
-        <a href="#">Contate-nos</a>
-      </div>
-    </div>
-  </body>
 </html>

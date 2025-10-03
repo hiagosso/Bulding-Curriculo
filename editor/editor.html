@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editor de Currículo</title>
-    <link rel="stylesheet" href="./editor.css" />
-    <link rel="stylesheet" href="../style.css">
-  </head>
 
-  <body>
-    <header id="cabecalho">
-      <button id="btn" onclick="location.href='../index.html'">Início</button>
-      <button id="btn" onclick="location.href='./editor.html'">Editor</button>
-      <button id="btn" onclick="location.href='../index.html#Sobre'">
-        Sobre
-      </button>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor de Currículo</title>
+  <link rel="stylesheet" href="./editor.css" />
+  <link rel="stylesheet" href="../style.css">
+</head>
 
-    <main>
-      <div>
-        <form action="">
-          <p>Nome</p>
-          <input type="text" />
-          <p>Cidade e estado</p>
-          <input type="text" />
-          <p>Email</p>
-          <input type="text" />
-          <hr />
-          <p>Objetivo</p>
-          <input type="text" />
-          <p>Resumo</p>
-          <input type="text" />
-        </form>
-      </div>
-    </main>
-  </body>
+<body>
+  <header id="cabecalho">
+    <button id="btn" onclick="location.href='../index.html'">Início</button>
+    <button id="btn" onclick="location.href='./editor.html'">Editor</button>
+    <button id="btn" onclick="location.href='../index.html#Sobre'">
+      Sobre
+    </button>
+  </header>
+
+  <main>
+    <h2 id="Preencha">Preencha seus dados</h2>
+    <form id="form">
+      <label>Nome Completo:</label>
+      <input type="text" id="nome">
+
+      <label>Cidade e Estado:</label>
+      <input type="text" id="Cidade">
+
+      <label>Telefone:</label>
+      <input type="text" id="telefone">
+
+      <label>Email:</label>
+      <input type="email" id="email">
+
+      <label>Linkdln:</label>
+      <input type="text" id="Linkdln">
+
+      <label>Objetivo:</label>
+      <input type="text" id="Objetivo"  placeholder=" o título da vaga que você deseja">
+      
+      <label>Resumo:</label>
+      <textarea id="resumo" placeholder="Exemplo: Estou à procura de uma oportunidade de estágio onde possa mostrar meus conhecimentos em HTML, CSS, JavaScript e React. Dedicado a desenvolver interfaces de usuário interativas e eficientes, estou motivado para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades através de experiências práticas."></textarea>
+
+      <label>Habilidades:</label>
+      <textarea id="habilidades" placeholder=" Aqui irá citar as habilidades interpessoais e técnicas. Ótimas fontes de palavras-chaves são no site da empresa e descrição das vagas."></textarea>
+
+      <label>Formação:</label>
+      <textarea id="formacao"></textarea>
+
+      <label>Experiências:</label>
+      <textarea id="experiencia"></textarea>
+
+      <button type="button" class="btnGerarPdf" onclick="gerarPDF()">Gerar PDF</button>
+
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="./GerarPdf.js"></script>
+</body>
+
 </html>
