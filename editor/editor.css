@@ -24,7 +24,7 @@ header#cabecalho {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 100;
