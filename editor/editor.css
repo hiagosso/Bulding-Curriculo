@@ -4,51 +4,10 @@
 
 }
 
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-
 body {
   font-family: sans-serif;
   background: var(--corDestaque);
   min-height: 100vh;
-}
-
-
-header#cabecalho {
-    background-color: white;
-    padding: 10px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    flex-wrap: nowrap; /* Mantém todos os itens em uma linha */
-}
-
-
-header#cabecalho button {
-  background: none;
-  border: none;
-  color: var(--corDestaque);
-  font-size: 18px;
-  cursor: pointer;
-  white-space: nowrap;
-  border-radius: var(--borda);
-  padding: 8px 12px;
-  transition: all 0.3s ease;
-}
-
-header#cabecalho button:hover {
-  background-color: #1a8e3d;
-  color: white;
 }
 
 main{
