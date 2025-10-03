@@ -79,26 +79,28 @@ header#cabecalho button:hover {
 .opcao input,
 .opcao textarea {
     border: 1px gray solid;
-    padding: 16px; /* aumento do padding para maior conforto */
+    padding: 42px;
     border-radius: var(--borda);
     width: 100%;
-    resize: none; /* desativa redimensionamento */
-    overflow: hidden; /* remove scrollbar interna */
+    resize: none;
+    overflow: auto;
+    overflow-wrap: break-word;
     font-size: 1em;
     line-height: 1.4em;
-    white-space: pre-wrap; /* mantém \n e quebra automática */
-  word-wrap: break-word; /* força quebra de palavras longas */
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
-input[type="color"] {
-    width: 40px;
-    height: 40px;
+/* sobrescreve apenas o input de cor */
+.opcao input[type="color"] {
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    /* impede de esticar no flexbox */
     padding: 0;
-    border-radius: 5px;
-    border: 1px solid gray;
+    border-radius: 8px;
     cursor: pointer;
 }
-
 /* BOTÃO PDF */
 #btn-pdf {
     background-color: var(--corDestaque);
@@ -188,5 +190,39 @@ input[type="color"] {
 
     #meuIframe {
         height: 40vh;
+    }
+}
+/* CSS para PDF ABNT */
+@media print {
+    body {
+        font-family: "Times New Roman", serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        margin-top: 3cm;
+        margin-bottom: 2cm;
+        margin-left: 3cm;
+        margin-right: 2cm;
+        text-align: justify;
+        background: none !important;
+        /* remove fundo */
+    }
+
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        margin: 0;
+    }
+
+    p {
+        text-indent: 1.25cm;
+        margin: 0 0 10px 0;
+    }
+
+    .citações {
+        font-size: 10pt;
+        line-height: 1.0;
+        margin: 0;
+        text-indent: 0;
     }
 }

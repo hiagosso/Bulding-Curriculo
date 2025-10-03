@@ -9,15 +9,11 @@
 
   <body>
     <header id="cabecalho">
-      <button id="btn" onclick="location.href='../index.html'">
-        Início
-      </button>
+      <button id="btn" onclick="location.href='../index.html'">Início</button>
       <button id="btn" onclick="location.href='../index.html#modelos'">
         Modelos
       </button>
-      <button id="btn" onclick="location.href='./editor.html'">
-        Editor
-      </button>
+      <button id="btn" onclick="location.href='./editor.html'">Editor</button>
       <button id="btn" onclick="location.href='../index.html#Sobre'">
         Sobre
       </button>
@@ -28,20 +24,57 @@
         <input type="text" id="inputNome" placeholder="Nome" />
         <input type="text" id="inputNumero" placeholder="Telefone" />
         <input type="text" id="inputEmail" placeholder="Email" />
-        <textarea id="campoObjetico" placeholder="Objetivo" wrap="soft" rows="5" cols="30"></textarea>
-        <textarea id="campoResumo" placeholder="Resumo" wrap="soft" rows="5" cols="30"></textarea>
-        <textarea id="campoHabilidades" placeholder="Habilidades" wrap="soft" rows="5" cols="30"></textarea>
-        <textarea id="campoEducacao" placeholder="Educação" wrap="soft" rows="5" cols="30"></textarea>
-        <textarea id="campoExperiencia" placeholder="Experiência" wrap="soft" rows="5" cols="30"></textarea>
-        
+        <textarea
+          id="campoObjetico"
+          placeholder="Objetivo"
+          wrap="soft"
+          rows="5"
+          cols="30"
+        ></textarea>
+        <textarea
+          id="campoResumo"
+          placeholder="Resumo"
+          wrap="soft"
+          rows="5"
+          cols="30"
+        ></textarea>
+        <textarea
+          id="campoHabilidades"
+          placeholder="Habilidades"
+          wrap="soft"
+          rows="5"
+          cols="30"
+        ></textarea>
+        <textarea
+          id="campoEducacao"
+          placeholder="Educação"
+          wrap="soft"
+          rows="5"
+          cols="30"
+        ></textarea>
+        <textarea
+          id="campoExperiencia"
+          placeholder="Experiência"
+          wrap="soft"
+          rows="5"
+          cols="30"
+        ></textarea>
+
         <p>Cor do texto</p>
-        <input type="color" name="Cor do texto" id="colorText" />
-        <button id="btn-pdf">Gerar Pdf</button>
+        <input
+          type="color"
+          id="colorText"
+          name="cor do texto"
+          value="oklab(50% 0.1 0.1 / 0.5)"
+          colorspace="display-p3"
+          alpha
+        />
+        <button id="btn-pdf" onclick="gerarPdf()">Gerar Pdf</button>
       </div>
 
       <!-- Aqui aparece o preview -->
       <iframe
-        src="./templates/outro.html"
+        src="./templates/modelo1.html"
         id="meuIframe"
         frameborder="1"
         width="50%"
@@ -50,7 +83,12 @@
     </div>
 
     <script src="editor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./gerarPdf.js"></script>
   </body>
 </html>
