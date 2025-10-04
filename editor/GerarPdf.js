@@ -56,7 +56,7 @@ function gerarPDF() {
 
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
-  doc.text(`Cidade, Estado: ${cidade}`, 20, 30);
+  doc.text(`${cidade}`, 20, 30);
   doc.text(`Telefone: ${telefone}`, 20, 37);
   doc.text(`Email: ${email}`, 20, 44);
   doc.text(`Linkdln: ${linkdln}`, 20, 51);
