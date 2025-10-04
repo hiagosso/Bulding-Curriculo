@@ -1,62 +1,106 @@
 :root {
   --corDestaque: #12ff80;
   --borda: 15px;
-  --corFundo:#ffffff;
-
+  --corFundo: #ffffff;
 }
 
 body {
   font-family: sans-serif;
   background: var(--corDestaque);
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   gap: 15px;
-  margin-top: 15px;
-  
-  
+  padding: 15px;
 }
-#form{
+
+#form {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 8px;
-
-  
-  padding: 8px;
+  gap: 12px;
+  padding: 15px;
   background-color: var(--corFundo);
-  border: #817a7a25 2px solid;
+  border: 2px solid #817a7a25;
   border-radius: var(--borda);
+  width: 80%;
+  max-width: 500px;
+  box-sizing: border-box;
 }
 
-#Preencha{
+#Preencha {
   color: var(--corFundo);
 }
 
 .btnGerarPdf {
-    background-color: var(--corDestaque);
-    color: var(--corFundo);
-    border: none;
-    border-radius: 50px;
-    padding: 5px 10px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: var(--corDestaque);
+  color: var(--corFundo);
+  border: none;
+  border-radius: 50px;
+  padding: 8px 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btnGerarPdf:hover {
-    background-color: #1a8e3d;
+  background-color: #1a8e3d;
 }
 
-textarea{
-  width: 60vw;
-  height: 20vh;
+textarea {
+  width: 100%;
+  height: 150px;
   resize: none;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  #form {
+    width: 95%;
+    padding: 12px;
+  }
+
+  textarea {
+    height: 120px;
+    font-size: 0.95em;
+  }
+
+  .btnGerarPdf {
+    padding: 6px 12px;
+    font-size: 1em;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  main {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #form {
+    width: 100%; /* ocupa toda a largura da tela */
+    padding: 10px; /* pequeno padding para não grudar nas bordas */
+    border-radius: 10px; /* opcional, menos arredondado em telas pequenas */
+  }
+
+  textarea {
+    height: 100px;
+    font-size: 0.9em;
+  }
+
+  .btnGerarPdf {
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
 }
