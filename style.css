@@ -8,7 +8,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px); /* opcional: desce um pouco */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  animation: fadeIn 1s ease;
 }
 
 /* HEADER */
@@ -40,7 +41,8 @@ header#cabecalho {
   align-items: center;
   gap: 10px;
   width: 100%;
-  flex-wrap: nowrap; /* deixa quebrar em telas pequenas */
+  flex-wrap: wrap; /* permite ajuste dos botões */
+  animation: fadeIn 1s ease;
 }
 
 header#cabecalho button {
@@ -53,6 +55,9 @@ header#cabecalho button {
   border-radius: var(--borda);
   transition: all 0.3s ease;
   white-space: nowrap;
+  flex: 1 1 auto; /* botões crescem ou encolhem conforme o espaço */
+  min-width: 100px;
+  max-width: 200px;
 }
 
 header#cabecalho button:hover {
@@ -77,6 +82,7 @@ header#cabecalho button:hover {
   max-width: 500px;
   width: 100%;
   margin: 20px;
+  animation: fadeIn 1s ease;
 }
 
 #Titulo {
@@ -94,6 +100,7 @@ header#cabecalho button:hover {
   font-size: 1.2em;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  animation: fadeIn 1.2s ease;
 }
 
 .btn-comecar:hover {
@@ -110,6 +117,7 @@ header#cabecalho button:hover {
   gap: 15px;
   width: 100%;
   margin-top: 50px;
+  animation: fadeIn 1.5s ease;
 }
 
 .footer-nav p {
@@ -117,19 +125,18 @@ header#cabecalho button:hover {
 }
 
 .texto-sobre {
-  white-space: pre-wrap; /* quebra texto em telas menores */
+  white-space: pre-wrap;
 }
 
-/* Responsividade */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   header#cabecalho {
-    padding: 8px 10px;
-    gap: 5px;
+    gap: 8px;
   }
 
   header#cabecalho button {
-    font-size: 14px;
-    padding: 6px 8px;
+    font-size: 16px;
+    padding: 6px 10px;
   }
 
   #Titulo {
@@ -145,13 +152,12 @@ header#cabecalho button:hover {
 
 @media (max-width: 480px) {
   header#cabecalho {
-    flex-direction: column;
-    gap: 8px;
+    gap: 5px;
   }
 
   header#cabecalho button {
-    width: 100%;
     font-size: 14px;
+    padding: 5px 8px;
   }
 
   #Titulo {
@@ -161,5 +167,9 @@ header#cabecalho button:hover {
   .footer-nav {
     font-size: 0.9em;
     padding: 15px;
+  }
+
+  .btn-comecar {
+    width: 90%;
   }
 }
