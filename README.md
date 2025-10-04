@@ -20,8 +20,7 @@ um campo de GitHub caso a pessoa possua.
 O site gera um arquivo PDF para envio fácil.  
 Exemplo de currículo criado:  
 
-![Currículo de exemplo](./img/exemplo.png)
-> Observação: a tarja preta no exemplo, é para não monstrar o número neste exemplo. Mas na geração do currículo no site não tera essa tarja preta.
+![Currículo de exemplo](./img/exemplo.jpg)
 
 ### Dependências
 
