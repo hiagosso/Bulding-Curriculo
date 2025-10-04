@@ -31,7 +31,7 @@ main {
   border: 2px solid #817a7a25;
   border-radius: var(--borda);
   width: 80%;
-  max-width: 500px;
+  max-width: 500px; /* para telas grandes ainda funciona */
   box-sizing: border-box;
 }
 
@@ -63,35 +63,19 @@ textarea {
   font-size: 1em;
 }
 
-/* Responsividade para tablets */
-@media (max-width: 768px) {
-  #form {
-    width: 95%;
-    padding: 12px;
-  }
-
-  textarea {
-    height: 120px;
-    font-size: 0.95em;
-  }
-
-  .btnGerarPdf {
-    padding: 6px 12px;
-    font-size: 1em;
-  }
-}
-
 /* Responsividade para celulares */
 @media (max-width: 480px) {
   main {
+    padding: 0;
     gap: 10px;
-    padding: 10px;
   }
 
   #form {
-    width: 100%; /* ocupa toda a largura da tela */
-    padding: 10px; /* pequeno padding para não grudar nas bordas */
-    border-radius: 10px; /* opcional, menos arredondado em telas pequenas */
+    width: 100vw; /* ocupa toda a largura da tela */
+    max-width: none; /* remove limite de largura */
+    margin: 0; /* remove margens */
+    border-radius: 0; /* sem arredondamento, ocupa completamente */
+    padding: 10px; /* padding interno mínimo */
   }
 
   textarea {
