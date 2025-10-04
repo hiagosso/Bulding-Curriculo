@@ -40,7 +40,7 @@ header#cabecalho {
   align-items: center;
   gap: 10px;
   width: 100%;
-  flex-wrap: wrap; /* deixa quebrar em telas pequenas */
+  flex-wrap: nowrap; /* deixa quebrar em telas pequenas */
 }
 
 header#cabecalho button {
