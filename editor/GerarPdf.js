@@ -2,32 +2,6 @@ function gerarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // pega os valores
-  const nome = document.getElementById("nome").value;
-  const cidade = document.getElementById("Cidade").value;
-  const email = document.getElementById("email").value;
-  const linkdln = document.getElementById("Linkdln").value;
-  const telefone = document.getElementById("telefone").value;
-  const objetivo = document.getElementById("Objetivo").value;
-  const resumo = document.getElementById("resumo").value;
-  const habilidades = document.getElementById("habilidades").value;
-  const formacao = document.getElementById("formacao").value;
-  const experiencia = document.getElementById("experiencia").value;
-
-  // título
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(20);
-  doc.text(nome, 20, 20);
-
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "normal");
-  doc.text(`Cidade, Estado: ${cidade}`, 20, 30);
-  doc.text(`Telefone: ${telefone}`, 20, 37);
-  doc.text(`Email: ${email}`, 20, 44);
-  doc.text(`Linkdln: ${linkdln}`, 20, 51);
-
-  let y = 60; // posição inicial do conteúdo
-
   function addSection(titulo, conteudo) {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(14);
@@ -48,6 +22,50 @@ function gerarPDF() {
     y += 10; // pula espaço depois da linha
   }
 
+  function formatarTelefone(numero) {
+    // Remove tudo que não for número
+    numero = numero.replace(/\D/g, "");
+
+    if (numero.length === 11) {
+      // Formato: (XX) XXXXX-XXXX
+      return numero.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    } else if (numero.length === 10) {
+      // Formato: (XX) XXXX-XXXX
+      return numero.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+    } else {
+      return numero; // retorna como está se não tiver 10 ou 11 dígitos
+    }
+  }
+  // pega os valores
+  const nome = document.getElementById("nome").value;
+  const cidade = document.getElementById("Cidade").value;
+  const email = document.getElementById("email").value;
+  const linkdln = document.getElementById("Linkdln").value;
+  const github = document.getElementById("Github").value;
+  const telefone = formatarTelefone(document.getElementById("telefone").value);
+  const objetivo = document.getElementById("Objetivo").value;
+  const resumo = document.getElementById("resumo").value;
+  const habilidades = document.getElementById("habilidades").value;
+  const formacao = document.getElementById("formacao").value;
+  const experiencia = document.getElementById("experiencia").value;
+
+  // título
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(20);
+  doc.text(nome, 20, 20);
+
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "normal");
+  doc.text(`Cidade, Estado: ${cidade}`, 20, 30);
+  doc.text(`Telefone: ${telefone}`, 20, 37);
+  doc.text(`Email: ${email}`, 20, 44);
+  doc.text(`Linkdln: ${linkdln}`, 20, 51);
+  let y = 60; // posição inicial do conteúdo
+  if (github) {
+    y = 65;
+    doc.text(`Github: ${github}`, 20, 58);
+  } 
+    
   addDivider();
   addSection("Objetivo", objetivo);
   addDivider();
