@@ -59,7 +59,7 @@ function gerarPDF() {
   doc.text(`${cidade}`, 20, 30);
   doc.text(`Telefone: ${telefone}`, 20, 37);
   doc.text(`Email: ${email}`, 20, 44);
-  doc.text(`Linkdln: ${linkdln}`, 20, 51);
+  doc.text(`LinkedIn: ${linkdln}`, 20, 51);
   let y = 60; // posição inicial do conteúdo
   if (github) {
     y = 65;
