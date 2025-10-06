@@ -30,8 +30,7 @@ main {
   background-color: var(--corFundo);
   border: 2px solid #817a7a25;
   border-radius: var(--borda);
-  width: 80%;
-  max-width: 500px; /* para telas grandes ainda funciona */
+  width: 80vw; /* para telas grandes ainda funciona */
   box-sizing: border-box;
 }
 
