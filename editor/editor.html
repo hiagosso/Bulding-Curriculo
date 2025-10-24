@@ -25,7 +25,7 @@
       <input type="text" id="Cidade">
 
       <label>Telefone:</label>
-      <input type="number" id="telefone" maxlength="10">
+      <input type="number" id="telefone" maxlength="11">
 
       <label>Email:</label>
       <input type="email" id="email">
@@ -59,9 +59,11 @@
       <label>Experiências:</label>
       <textarea id="experiencia" placeholder="Caso tenha"></textarea>
 
-      <button type="button" id="btnGerarPdf">Gerar PDF</button>
+      <button type="button" id="btnGerarPdf" onclick="gerarPDF()">Gerar PDF</button>
 
   </main>
+  <iframe  frameborder="0"></iframe>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="./GerarPdf.js"></script>
 </body>
