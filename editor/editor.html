@@ -25,13 +25,13 @@
       <input type="text" id="Cidade">
 
       <label>Telefone:</label>
-      <input type="text" id="telefone">
+      <input type="number" id="telefone" maxlength="10">
 
       <label>Email:</label>
       <input type="email" id="email">
 
       <label>LinkedIn:</label>
-      <input type="text" id="Linkdln">
+      <input type="text" id="Linkdln" placeholder="Caso tenha">
 
       <label>Github:</label>
       <input type="text" id="Github" placeholder="Caso tenha">
@@ -57,9 +57,9 @@
       "></textarea>
 
       <label>Experiências:</label>
-      <textarea id="experiencia"></textarea>
+      <textarea id="experiencia" placeholder="Caso tenha"></textarea>
 
-      <button type="button" class="btnGerarPdf" onclick="gerarPDF()">Gerar PDF</button>
+      <button type="button" id="btnGerarPdf">Gerar PDF</button>
 
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

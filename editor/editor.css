@@ -1,7 +1,21 @@
 :root {
   --corDestaque: #12ff80;
   --borda: 15px;
-  --corFundo: #ffffff;
+  --corFundoInput: #4a4a4a;
+  --corFundo: #3a3a3a;
+  --corTexto: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  color: var(--corTexto);
+}
+
+input,textarea{
+  background-color: var(--corFundoInput);
 }
 
 body {
@@ -38,7 +52,7 @@ main {
   color: var(--corFundo);
 }
 
-.btnGerarPdf {
+#btnGerarPdf {
   background-color: var(--corDestaque);
   color: var(--corFundo);
   border: none;
@@ -49,7 +63,7 @@ main {
   transition: background-color 0.3s ease;
 }
 
-.btnGerarPdf:hover {
+#btnGerarPdf:hover {
   background-color: #1a8e3d;
 }
 
