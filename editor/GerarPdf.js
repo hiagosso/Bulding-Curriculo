@@ -95,5 +95,5 @@ btn.addEventListener('click',()=>{
   if (!nome && !cidade && !telefone && !objetivo && !resumo && !formacao) {
   //   window.alert("Ha campos vazios")
   }
-  window.FileReader()
+  gerarPDF();
 })
