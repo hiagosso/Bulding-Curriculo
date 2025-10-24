@@ -139,6 +139,11 @@ header#cabecalho button:hover {
   white-space: pre-wrap;
 }
 
+.footer-nav a {
+  color: var(--corDestaque);
+  text-decoration: none;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
   header#cabecalho {
