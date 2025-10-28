@@ -8,12 +8,27 @@
     <style>
         body {
             background-color: white;
+            max-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        h1, h2, p {
+
+        h1,
+        h2,
+        p {
             font-family: Arial, sans-serif;
             color: black;
+            font-style: bold;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 100%;
+            margin-bottom: 8px;
         }
-        #link, #git {
+
+        #link,
+        #git,
+        #expe,
+        #linha {
             display: none;
         }
     </style>
@@ -38,8 +53,8 @@
     <hr>
     <h2>Formação</h2>
     <p id="formacao-text"></p>
-    <hr>
-    <h2>Experiências</h2>
+    <hr id="linha">
+    <h2 id="expe">Experiências</h2>
     <p id="experiencias-text"></p>
 
 

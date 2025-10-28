@@ -14,8 +14,38 @@
   color: var(--corTexto);
 }
 
-input,textarea{
+input,
+textarea {
   background-color: var(--corFundoInput);
+}
+
+/* Remove spinners do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* campos e labels ocupam 100% do form */
+.form input,
+.form textarea,
+.form label {
+  width: 100%;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="email"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--corFundoInput);
+  color: var(--corTexto);
 }
 
 body {
@@ -34,6 +64,7 @@ main {
   min-height: 100vh;
   gap: 15px;
   padding: 15px;
+  width: 100%;
 }
 
 .form {
@@ -44,7 +75,8 @@ main {
   background-color: var(--corFundo);
   border: 2px solid #817a7a25;
   border-radius: var(--borda);
-  width: 80vw; /* para telas grandes ainda funciona */
+  width: min(900px, 95%);
+  /* largura máxima em telas grandes, boa margem em telas pequenas */
   box-sizing: border-box;
 }
 
@@ -73,6 +105,11 @@ main {
   background-color: #1a8e3d;
 }
 
+/* botões com tamanho mínimo para facilitar toque */
+.btn {
+  min-width: 140px;
+}
+
 textarea {
   width: 100%;
   height: 150px;
@@ -87,14 +124,17 @@ textarea {
   main {
     padding: 0;
     gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
 
-  #form {
-    width: 100vw; /* ocupa toda a largura da tela */
-    max-width: none; /* remove limite de largura */
-    margin: 0; /* remove margens */
-    border-radius: 0; /* sem arredondamento, ocupa completamente */
-    padding: 10px; /* padding interno mínimo */
+  .form {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 15px;
   }
 
   textarea {
@@ -105,5 +145,13 @@ textarea {
   .btn {
     padding: 5px 10px;
     font-size: 0.9em;
+  }
+
+  /* botões do formulário ocupam toda largura em mobile para facilitar toque */
+  .form .btn,
+  #btnGerarPdf,
+  .btn-comecar {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

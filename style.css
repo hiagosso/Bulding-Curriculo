@@ -120,12 +120,18 @@ header#cabecalho button:hover {
 /* FOOTER */
 .footer-nav {
   position: fixed;
+  left: 0;
+  /* garante alinhamento a partir da borda esquerda */
   background-color: var(--corFundo);
   padding: 20px 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
+  /* centraliza conteúdo horizontalmente */
+  justify-content: center;
+  /* centraliza conteúdo verticalmente dentro do footer */
   width: 100%;
   bottom: 0;
   animation: fadeIn 1.5s ease;
