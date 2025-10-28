@@ -5,19 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editor de Currículo</title>
-  <link rel="stylesheet" href="./editor.css" />
+  <link rel="stylesheet" href="./Estilos/editor.css" />
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./Estilos/preview.css">
 </head>
 
 <body>
   <header id="cabecalho">
-    <button id="btn" onclick="location.href='../index.html'">Início</button>
+    <button class="btn" onclick="location.href='../index.html'">Início</button>
     </button>
   </header>
 
   <main>
     <h2 id="Preencha">Preencha seus dados</h2>
-    <form id="form">
+    <div class="form">
       <label>Nome Completo:</label>
       <input type="text" id="nome">
 
@@ -59,13 +60,22 @@
       <label>Experiências:</label>
       <textarea id="experiencia" placeholder="Caso tenha"></textarea>
 
-      <button type="button" id="btnGerarPdf" onclick="gerarPDF()">Gerar PDF</button>
-
+      <button type="button" class="btn" onclick="showPreview()">Gerar PDF</button>
+    </div>
   </main>
-  <iframe  frameborder="0"></iframe>
+
+  <div id="preview">
+    <div class="form">
+      <h2>Pré-visualização do Currículo</h2>
+      <iframe id="iframePreview" class="preview-iframe" src="./JS/preview.html"></iframe>
+      <button class="btn" onclick="gerarPDF()">Concluir</button>
+      <button class="btn" onclick="hidePreview()">Fechar</button>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="./GerarPdf.js"></script>
+  <script type="module" src="./JS/Pdf.js"></script>
+  <script type="module" src="./JS/Preview.js"></script>
 </body>
 
 </html>

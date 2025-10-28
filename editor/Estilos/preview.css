@@ -1,0 +1,68 @@
+:root {
+    --corDestaque: #12ff80;
+    --borda: 15px;
+    --corFundoInput: #4a4a4a;
+    --corTexto: #ffffff;
+    --corFundo: #3a3a3a;
+    --corFundoPreview: #3a3a3aa2;
+}
+
+#preview {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    background-color: var(--corFundoPreview);
+    z-index: 999;
+}
+
+/* Modal content dentro do preview */
+#preview .form {
+    width: min(1000px, 95%);
+    max-width: 1000px;
+    height: min(95vh, 1100px);
+    background-color: var(--corFundo);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+    /* mantém o modal com scroll apenas no iframe/content */
+}
+
+/* iframe que exibe o preview - ocupa a maior parte do modal e tem overflow interno caso necessário */
+.preview-iframe {
+    width: 100%;
+    height: calc(100% - 120px);
+    /* deixa espaço para título e botões */
+    border: none;
+    background: white;
+}
+
+/* área de botões dentro do modal ajustada para ficar visível */
+#preview .form>button {
+    align-self: flex-end;
+}
+
+@media (max-width: 480px) {
+    #preview .form {
+        width: 95%;
+        height: 90vh;
+        padding: 12px;
+    }
+
+    .preview-iframe {
+        height: calc(100% - 110px);
+    }
+}

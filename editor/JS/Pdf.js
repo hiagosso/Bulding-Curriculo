@@ -1,3 +1,5 @@
+import formatarTelefone from './FormatarTelefone.js';
+
 function gerarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
@@ -27,25 +29,6 @@ function gerarPDF() {
     y += 10; // pula espaço depois da linha
   }
   //===========================//
-
-
-  // função para formatar telefone
-  function formatarTelefone(numero) {
-    // Remove tudo que não for número
-    numero = numero.replace(/\D/g, "");
-
-    if (numero.length === 11) {
-      // Formato: (XX) XXXXX-XXXX
-      return numero.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
-    } else if (numero.length === 10) {
-      // Formato: (XX) XXXX-XXXX
-      return numero.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
-    } else {
-      return numero; // retorna como está se não tiver 10 ou 11 dígitos
-    }
-  }
-  //===========================//
-
 
   //pega os valores
   const nome = document.getElementById("nome").value;
@@ -97,13 +80,11 @@ function gerarPDF() {
     addSection("Experiências", experiencia);
   }
 
-  // verifica se todos os campos estão vazios
-  if (!nome && !cidade && !telefone && !objetivo && !resumo && !formacao) {
-    alert("Ha campos vazios");
-    return;
-  }
+
   // salva PDF
   doc.save("curriculo.pdf");
 }
 
+// Expor a função para o escopo global para chamadas inline no HTML
+window.gerarPDF = gerarPDF;
 
