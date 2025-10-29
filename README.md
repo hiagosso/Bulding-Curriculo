@@ -1,4 +1,4 @@
-# Building-Currículo
+# Building-Curriculum
 
 Este site foi desenvolvido como parte de um Trabalho de Conclusão de Curso e tem como objetivo oferecer uma forma  
 prática e rápida de criar um currículo profissional.
