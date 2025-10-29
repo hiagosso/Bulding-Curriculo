@@ -1,4 +1,5 @@
 import formatarTelefone from './FormatarTelefone.js';
+import { hidePreview } from './Preview.js';
 
 function gerarPDF() {
   const { jsPDF } = window.jspdf;
@@ -18,7 +19,7 @@ function gerarPDF() {
     doc.text(texto, 20, y);
     y += texto.length * 7 + 5; // ajusta altura
   }
-  //===========================//
+
 
 
   // função para adicionar um divisor
@@ -28,7 +29,6 @@ function gerarPDF() {
     doc.line(20, y, 190, y); // desenha a linha
     y += 10; // pula espaço depois da linha
   }
-  //===========================//
 
   //pega os valores
   const nome = document.getElementById("nome").value;
@@ -48,6 +48,7 @@ function gerarPDF() {
   doc.setFontSize(20);
   doc.text(nome, 20, 20);
 
+  //contatos
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
   doc.text(`${cidade}`, 20, 30);
@@ -83,8 +84,10 @@ function gerarPDF() {
 
   // salva PDF
   doc.save("curriculo.pdf");
+  hidePreview();
 }
 
 // Expor a função para o escopo global para chamadas inline no HTML
 window.gerarPDF = gerarPDF;
 
+const downloadBtn = document.getElementById('download');

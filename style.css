@@ -36,7 +36,6 @@ body {
   background: linear-gradient(0deg, var(--corFundo) 40%, rgba(18, 255, 128, 1) 80%);
 }
 
-/* HEADER */
 header#cabecalho {
   background-color: var(--corFundo);
   padding: 10px 5%;
@@ -46,7 +45,6 @@ header#cabecalho {
   gap: 10px;
   width: 100%;
   flex-wrap: wrap;
-  /* permite ajuste dos botões */
   animation: fadeIn 1s ease;
 }
 
@@ -101,7 +99,7 @@ header#cabecalho button:hover {
   font-size: 2em;
 }
 
-.btn-comecar {
+.btn {
   background-color: var(--corDestaque);
   color: var(--corTexto);
   border: none;
@@ -113,15 +111,14 @@ header#cabecalho button:hover {
   animation: fadeIn 1.2s ease;
 }
 
-.btn-comecar:hover {
+.btn:hover {
   background-color: #1a8e3d;
 }
 
-/* FOOTER */
+
 .footer-nav {
-  position: fixed;
+  position: static;
   left: 0;
-  /* garante alinhamento a partir da borda esquerda */
   background-color: var(--corFundo);
   padding: 20px 15px;
   text-align: center;
@@ -129,9 +126,7 @@ header#cabecalho button:hover {
   flex-direction: column;
   gap: 15px;
   align-items: center;
-  /* centraliza conteúdo horizontalmente */
   justify-content: center;
-  /* centraliza conteúdo verticalmente dentro do footer */
   width: 100%;
   bottom: 0;
   animation: fadeIn 1.5s ease;
@@ -165,7 +160,7 @@ header#cabecalho button:hover {
     font-size: 1.8em;
   }
 
-  .btn-comecar {
+  .btn{
     width: 80%;
     padding: 12px;
     font-size: 1em;
@@ -192,7 +187,7 @@ header#cabecalho button:hover {
     position: static;
   }
 
-  .btn-comecar {
+  .btn{
     width: 90%;
   }
 }

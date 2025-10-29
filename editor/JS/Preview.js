@@ -1,6 +1,6 @@
 import formatarTelefone from './FormatarTelefone.js';
 
-function hidePreview() {
+export function hidePreview() {
     const preview = document.getElementById('preview');
     preview.style.visibility = 'hidden';
     // restaurar rolagem do body
@@ -21,6 +21,7 @@ function showPreview() {
     const formacao = document.getElementById("formacao").value;
     const experiencia = document.getElementById("experiencia").value;
 
+    // popula o iframe com os valores
     const iframe = document.getElementById('iframePreview');
     iframe.onload = () => {
         const doc = iframe.contentDocument || iframe.contentWindow.document;
@@ -28,6 +29,7 @@ function showPreview() {
         doc.getElementById('cidade').innerText = cidade || 'Cidade, Estado';
         doc.getElementById('telefone').innerText = 'Telefone: ' + telefone;
         doc.getElementById('email').innerText = email || 'Email: ' + email;
+        // verifica se os campos de linkdln e github estão preenchidos antes de adicionar ao preview
         if (linkdln) {
             const linkElement = doc.getElementById('link');
             linkElement.style.display = 'block';
@@ -53,9 +55,9 @@ function showPreview() {
     // força recarregar o iframe caso já esteja carregado
     iframe.src = iframe.src;
 
-    // verifica se todos os campos estão vazios
-    if (!nome && !cidade && !telefone && !objetivo && !resumo && !formacao) {
-        alert("Ha campos vazios");
+    // verifica se algum campo obrigatório está vazio
+    if (!nome || !cidade || !telefone || !objetivo || !resumo || !formacao) {
+        alert("Há campos obrigatórios vazios! Por favor, preencha todos os campos necessários.");
         return;
     }
     const preview = document.getElementById('preview');

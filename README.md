@@ -14,13 +14,17 @@ um campo de GitHub caso a pessoa possua.
 
 ![Tela editor parte 1](./img/tela-editor.png)  
 ![Tela editor parte 2](./img/tela-editor2.png)
+![Tela editor parte 2](./img/tela-editor3.png)
+
+### Preview
+![Preview](./img/preview.png)
 
 ### Resultado final
 
 O site gera um arquivo PDF para envio fácil.  
 Exemplo de currículo criado:  
 
-![Currículo de exemplo](./img/exemplo.jpg)
+![Currículo de exemplo](./img/exemplo.png)
 
 ### Dependências
 
