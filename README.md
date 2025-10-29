@@ -29,6 +29,7 @@ Exemplo de currículo criado:
 ### Dependências
 
 [jsPdf](https://mozilla.github.io/pdf.js/getting_started/)
+[TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
 
 ### Criadores
 [Hiago](https://github.com/hiagosso)  

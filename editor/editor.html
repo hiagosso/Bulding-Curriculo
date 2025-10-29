@@ -1,81 +1,199 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en" class="min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* Remove os spinners no Chrome, Safari, Edge e Opera */
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Editor de Currículo</title>
-  <link rel="stylesheet" href="./Estilos/editor.css" />
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="./Estilos/preview.css">
-</head>
+  <body
+    class="min-h-screen w-screen bg-gradient-to-b from-green-400 to-stone-600 flex flex-col"
+  >
+    <header class="flex justify-center bg-stone-800 p-2 mb-10">
+      <button
+        class="text-green-400 font-bold text-2xl hover:text-green-800"
+        onclick="location.href='../index.html'"
+      >
+        Início
+      </button>
+    </header>
 
-<body>
-  <header id="cabecalho">
-    <button class="btn" onclick="location.href='../index.html'">Início</button>
-    </button>
-  </header>
+    <div
+      class="flex flex-col justify-center items-center bg-stone-800 text-white gap-2 py-2 px-4 rounded-lg mx-4 mb-10"
+    >
+      <div class="md:grid md:grid-cols-2 w-full md:w-fit  gap-4 mb-4">
+        <label>
+          <span class="after:content-['*'] after:text-red-500 block"
+            >Nome Completo</span
+          >
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+            type="text"
+            name="nome"
+            id="nome"
+            required
+            maxlength="50"
+          />
+        </label>
 
-  <main>
-    <h2 id="Preencha">Preencha seus dados</h2>
-    <div class="form">
-      <label>Nome Completo:</label>
-      <input type="text" id="nome" maxlength="50">
+        <label>
+          <span class="after:content-['*'] after:text-red-500 block"
+            >Cidade e Estado</span
+          >
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+            type="text"
+            name="Cidade e Estado"
+            id="Cidade"
+            required
+            placeholder="São Paulo, SP"
+            maxlength="30"
+          />
+        </label>
 
-      <label>Cidade e Estado:</label>
-      <input type="text" id="Cidade" placeholder="exemplo: São Paulo, SP" maxlength="30">
+        <label>
+          <span class="after:content-['*'] after:text-red-500 block"
+            >Telefone</span
+          >
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+            type="tel"
+            name="numero"
+            id="telefone"
+            required
+            inputmode="numeric"
+            maxlength="11"
+          />
+        </label>
 
-      <label>Telefone:</label>
-      <input type="number" id="telefone" oninput="if(this.value.length > 11) this.value = this.value.slice(0,11)">
+        <label>
+          <span class="">Email</span>
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="seuemail@exemplo.com"
+            maxlength="50"
+          />
+        </label>
 
-      <label>Email:</label>
-      <input type="email" id="email" maxlength="50">
+        <label>
+          <span class="">Linkedln</span>
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+            type="text"
+            name="Linkedln"
+            id="Linkdln"
+            maxlength="100"
+          />
+        </label>
 
-      <label>LinkedIn:</label>
-      <input type="text" id="Linkdln" placeholder="Caso tenha" maxlength="100">
+        <label>
+          <span class="">Github</span>
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+            type="text"
+            name="Github"
+            id="Github"
+            maxlength="100"
+          />
+        </label>
+      </div>
 
-      <label>Github:</label>
-      <input type="text" id="Github" placeholder="Caso tenha" maxlength="100">
+      <label class="w-full md:w-fit">
+        <span class="after:content-['*'] after:text-red-500 block "
+          >Objetivo</span
+        >
+        <input
+          class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
+          type="text"
+          name="nome"
+          id="Objetivo"
+          required
+          placeholder=" o título da vaga que você deseja"
+          maxlength="150"
+        />
+      </label>
 
-      <label>Objetivo:</label>
-      <input type="text" id="Objetivo" placeholder=" o título da vaga que você deseja" maxlength="150">
+      <label class="after:content-['*'] after:text-red-500 block"
+        >Resumo profissional</label
+      >
+      <textarea
+        id="resumo"
+        rows="4"
+        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500"
+        maxlength="400"
+        required
+        placeholder="Exemplo: Estou à procura de uma oportunidade de estágio onde possa mostrar meus conhecimentos em HTML, CSS, JavaScript e React. Dedicado a desenvolver interfaces de usuário interativas e eficientes, estou motivado para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades através de experiências práticas."
+      ></textarea>
 
-      <label>Resumo:</label>
-      <textarea id="resumo" maxlength="400"
-        placeholder="Exemplo: Estou à procura de uma oportunidade de estágio onde possa mostrar meus conhecimentos em HTML, CSS, JavaScript e React. Dedicado a desenvolver interfaces de usuário interativas e eficientes, estou motivado para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades através de experiências práticas."></textarea>
+      <label class="after:content-['*'] after:text-red-500 block"
+        >Habilidades</label
+      >
+      <textarea
+        id="habilidades"
+        rows="4"
+        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500"
+        required
+        maxlength="200"
+        placeholder=" Aqui irá citar as habilidades interpessoais e técnicas. Ótimas fontes de palavras-chaves são no site da empresa e descrição das vagas. Exemplo: Office | Vscode | Html"
+      ></textarea>
 
-      <label>Habilidades:</label>
-      <textarea id="habilidades" maxlength="200"
-        placeholder=" Aqui irá citar as habilidades interpessoais e técnicas. Ótimas fontes de palavras-chaves são no site da empresa e descrição das vagas. Exemplo: Office | Vscode | Html"></textarea>
-
-      <label>Formação:</label>
-      <textarea id="formacao" maxlength="300" placeholder="
+      <label class="after:content-['*'] after:text-red-500 block"
+        >Formação</label
+      >
+      <textarea
+        id="formacao"
+        rows="4"
+        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500 box-border h-50"
+        required
+        maxlength="300"
+        placeholder="
       Técnico em Desenvolvimento de Sistemas.
-      E.E Martim Egídio Damy – Conclusão em 12/ 2025
-    
-      2025 – Java e suas aplicações – 54h.
-      Udemy
-      "></textarea>
+      E.E Martim Egídio Damy – Conclusão em 12/ 2025"
+      ></textarea>
 
-      <label>Experiências:</label>
-      <textarea id="experiencia" maxlength="500" placeholder="Caso tenha"></textarea>
+      <label class="">experiência</label>
+      <textarea
+        id="experiencia"
+        rows="4"
+        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500"
+        required
+        maxlength="500"
+      ></textarea>
+      <button
+        class="bg-green-400 rounded-xl hover:bg-green-800 p-2 text-white w-full"
+        onclick="showPreview()"
+      >
+        Concluir
+      </button>
 
-      <button type="button" class="btn" onclick="showPreview()">Gerar PDF</button>
+      <div id="preview" class="h-screen w-screen bg-[rgba(0,0,0,0.5)]
+      flex-row justify-center items-center flex
+      fixed top-0 left-0 indent-32" style="visibility: hidden;">
+        <div class="bg-stone-800 text-white p-4 rounded-lg 
+        box-border flex flex-col overflow-hidden h-[min(95vh,1100px)] w-[min(1000px,96%)]
+        gap-6">
+            <h2>Pré-visualização do Currículo</h2>
+            <iframe src="./JS/preview.html" id="iframePreview" class="w-full 
+            h-full"></iframe>
+            <button class="bg-green-400 rounded-lg" onclick="gerarPDF()">Download</button>
+            <button class="bg-green-600 rounded-lg" onclick="hidePreview()">Fechar</button>
+        </div>
+      </div>
     </div>
-  </main>
-
-  <div id="preview">
-    <div class="form">
-      <h2>Pré-visualização do Currículo</h2>
-      <iframe id="iframePreview" class="preview-iframe" src="./JS/preview.html"></iframe>
-      <button class="btn" onclick="gerarPDF()">Concluir</button>
-      <button class="btn" onclick="hidePreview()">Fechar</button>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script type="module" src="./JS/Pdf.js"></script>
   <script type="module" src="./JS/Preview.js"></script>
-</body>
-
+  </body>
 </html>
