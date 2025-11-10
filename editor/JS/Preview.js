@@ -25,10 +25,10 @@ function showPreview() {
     const iframe = document.getElementById('iframePreview');
     iframe.onload = () => {
         const doc = iframe.contentDocument || iframe.contentWindow.document;
-        doc.getElementById('nome').innerText = nome || 'Nome';
-        doc.getElementById('cidade').innerText = cidade || 'Cidade, Estado';
+        doc.getElementById('nome').innerText = nome;
+        doc.getElementById('cidade').innerText = cidade;
         doc.getElementById('telefone').innerText = 'Telefone: ' + telefone;
-        doc.getElementById('email').innerText = email || 'Email: ' + email;
+        doc.getElementById('email').innerText ='Email: ' + email;
         // verifica se os campos de linkdln e github estão preenchidos antes de adicionar ao preview
         if (linkdln) {
             const linkElement = doc.getElementById('link');
