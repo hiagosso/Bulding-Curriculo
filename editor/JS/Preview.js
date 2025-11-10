@@ -56,7 +56,7 @@ function showPreview() {
     iframe.src = iframe.src;
 
     // verifica se algum campo obrigatório está vazio
-    if (!nome || !cidade || !telefone || !objetivo || !resumo || !formacao) {
+    if (!nome || !cidade || !telefone || !objetivo || !resumo || !formacao || !email) {
         alert("Há campos obrigatórios vazios! Por favor, preencha todos os campos necessários.");
         return;
     }
