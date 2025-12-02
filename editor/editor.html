@@ -3,189 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Building Curriculum</title>
+    <title>Currículo</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-  <body
-    class="min-h-screen w-full bg-gradient-to-b from-green-400 to-stone-600 flex flex-col"
-  >
-    <header class="flex justify-center bg-stone-800 p-2 mb-10">
+  <body class="min-h-screen w-full bg-gradient-to-b from-green-400 to-stone-600 flex flex-col">
+    
+    <header class="flex justify-center bg-stone-800 p-4 shadow-md">
       <button
-        class="text-green-400 font-bold text-2xl hover:text-green-800"
+        class="text-green-400 font-bold text-2xl hover:text-green-600 transition"
         onclick="location.href='../index.html'"
       >
         Início
       </button>
     </header>
+    <div class="flex flex-col items-center mx-4 my-10">
+      <div class="bg-stone-800 text-white p-6 rounded-xl w-full max-w-3xl shadow-lg flex flex-col gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <label class="flex flex-col gap-1">
+            <span class="font-semibold">Nome Completo: <span class="text-red-500">*</span></span>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" type="text" id="nome" required maxlength="50" placeholder="Seu Nome Aqui"/>
+          </label>
 
-    <div
-      class="flex flex-col justify-center items-center bg-stone-800 text-white gap-2 py-2 px-4 rounded-lg mx-4 mb-10"
-    >
-      <div class="md:grid md:grid-cols-2 w-full md:w-fit gap-4 mb-4">
-        <label>
-          <span class="after:content-['*'] after:text-red-500 block"
-            >Nome Completo</span
-          >
-          <input
-            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-            type="text"
-            name="nome"
-            id="nome"
-            required
-            maxlength="50"
-          />
-        </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-semibold">Cidade e Estado: <span class="text-red-500">*</span></span>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" type="text" id="Cidade" required maxlength="30" placeholder="São Paulo, SP" />
+          </label>
 
-        <label>
-          <span class="after:content-['*'] after:text-red-500 block"
-            >Cidade e Estado</span
-          >
-          <input
-            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-            type="text"
-            name="Cidade e Estado"
-            id="Cidade"
-            required
-            placeholder="São Paulo, SP"
-            maxlength="30"
-          />
-        </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-semibold">Telefone: <span class="text-red-500">*</span></span>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" type="tel" id="telefone" required maxlength="11" inputmode="numeric" placeholder="(11) 91111111111" />
+          </label>
 
-        <label>
-          <span class="after:content-['*'] after:text-red-500 block"
-            >Telefone</span
-          >
-          <input
-            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-            type="tel"
-            id="telefone"
-            required
-            inputmode="numeric"
-            maxlength="11"
-          />
-        </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-semibold">Email: <span class="text-red-500">*</span></span>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" type="email" id="email" maxlength="50" placeholder="seuemail@exemplo.com" />
+          </label>
 
-        <label>
-          <span class="after:content-['*'] after:text-red-500 block">Email</span>
-          <input
-            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-            type="email"
-            id="email"
-            placeholder="seuemail@exemplo.com"
-            maxlength="50"
-          />
-        </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-semibold">LinkedIn:</span>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" type="text" id="Linkdln" maxlength="100" placeholder="LinkedIn"/>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg py-0.1 px-2" type="text" id="LinkdlnLink" maxlength="100" placeholder="Link para seu LinkdIn" />
 
-        <label>
-          <span class="">Linkedln</span>
-          <input
-            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-            type="text"
-            id="Linkdln"
-            maxlength="100"
-          />
-        </label>
+          </label>
+          
+          <label class="flex flex-col gap-1">
+            <span class="font-semibold">Github:</span>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" type="text" id="Github" maxlength="100" placeholder="Github"/>
+            <input class="bg-stone-700 border border-stone-500 text-sm rounded-lg py-0.1 px-2" type="text" id="GithubLink" maxlength="100" placeholder="Link para seu Github"/>
+          </label>
 
-        <label>
-          <span class="">Github</span>
-          <input
-            class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-            type="text"
-            id="Github"
-            maxlength="100"
-          />
-        </label>
-      </div>
-
-      <label class="w-full md:w-fit">
-        <span class="after:content-['*'] after:text-red-500 block"
-          >Objetivo</span
-        >
-        <input
-          class="bg-stone-700 border border-stone-500 text-sm rounded-lg block w-full md:w-80 p-1.5"
-          type="text"
-          id="Objetivo"
-          required
-          placeholder=" o título da vaga que você deseja"
-          maxlength="150"
-        />
-      </label>
-
-      <label class="after:content-['*'] after:text-red-500 block"
-        >Resumo profissional</label
-      >
-      <textarea
-        id="resumo"
-        rows="4"
-        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500"
-        maxlength="400"
-        required
-        placeholder="Exemplo: Estou à procura de uma oportunidade de estágio onde possa mostrar meus conhecimentos em HTML, CSS, JavaScript e React. Dedicado a desenvolver interfaces de usuário interativas e eficientes, estou motivado para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades através de experiências práticas."
-      ></textarea>
-
-      <label class="after:content-['*'] after:text-red-500 block"
-        >Habilidades</label
-      >
-      <textarea
-        id="habilidades"
-        rows="4"
-        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500"
-        required
-        maxlength="200"
-        placeholder=" Aqui irá citar as habilidades interpessoais e técnicas. Ótimas fontes de palavras-chaves são no site da empresa e descrição das vagas. Exemplo: Office | Vscode | Html"
-      ></textarea>
-
-      <label class="after:content-['*'] after:text-red-500 block"
-        >Formação</label
-      >
-      <textarea
-        id="formacao"
-        rows="4"
-        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500 box-border h-50"
-        required
-        maxlength="300"
-        placeholder="
-      Técnico em Desenvolvimento de Sistemas.
-      E.E Martim Egídio Damy – Conclusão em 12/ 2025"
-      ></textarea>
-
-      <label class="">experiência</label>
-      <textarea
-        id="experiencia"
-        rows="4"
-        class="block p-2.5 w-full text-sm bg-stone-700 rounded-lg border border-stone-500"
-        required
-        maxlength="500"
-      ></textarea>
-      <button
-        class="bg-green-400 rounded-xl hover:bg-green-800 p-2 text-white w-full"
-        onclick="showPreview()"
-      >
-        Concluir
-      </button>
-
-      <div
-        id="preview"
-        class="fixed inset-0 bg-[rgba(0,0,0,0.5)] flex justify-center items-center overflow-y-auto z-50 p-4"
-        style="visibility: hidden"
-      >
-        <div
-          class="bg-stone-800 text-white p-4 rounded-lg box-border flex flex-col overflow-y-auto max-h-[90vh] w-[min(1000px,96%)] gap-6"
-        >
-          <h2>Pré-visualização do Currículo</h2>
-          <iframe
-            src="./JS/preview.html"
-            id="iframePreview"
-            class="w-full h-screen"
-          ></iframe>
-          <button class="bg-green-400 rounded-lg" onclick="gerarPDF()">
-            Download
-          </button>
-          <button class="bg-green-600 rounded-lg" onclick="hidePreview()">
-            Fechar
-          </button>
         </div>
+        <label class="flex flex-col gap-1">
+          <span class="font-semibold">Objetivo: <span class="text-red-500">*</span></span>
+          <input
+            class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2"
+            type="text"
+            id="Objetivo"
+            required
+            maxlength="150"
+            placeholder="Título da vaga desejada"
+          />
+        </label>
+        <label class="flex flex-col gap-1">
+          <span class="font-semibold">Resumo profissional: <span class="text-red-500">*</span></span>
+          <textarea id="resumo" rows="4" class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" maxlength="400" required placeholder="Exemplo: Estou à procura de uma oportunidade de estágio onde possa mostrar meus conhecimentos em HTML, CSS, JavaScript e React. Dedicado a desenvolver interfaces de usuário interativas e eficientes, estou motivado para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades através de experiências práticas."></textarea>
+        </label>
+
+        <label class="flex flex-col gap-1">
+          <span class="font-semibold">Habilidades: <span class="text-red-500">*</span></span>
+          <textarea id="habilidades" rows="4" class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" maxlength="200" required placeholder=" Aqui irá citar as habilidades interpessoais e técnicas. Ótimas fontes de palavras-chaves são no site da empresa e descrição das vagas. Exemplo: Office | Vscode | Html" ></textarea>
+        </label>
+
+        <label class="flex flex-col gap-1">
+          <span class="font-semibold">Formação: <span class="text-red-500">*</span></span>
+          <textarea id="formacao" rows="4" class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" maxlength="300" placeholder="Técnico em Desenvolvimento de Sistemas.
+E.E Martim Egídio Damy – Conclusão em 12/ 2025" required></textarea>
+        </label>
+
+        <label class="flex flex-col gap-1">
+          <span class="font-semibold">Experiência:</span>
+          <textarea id="experiencia" rows="4" class="bg-stone-700 border border-stone-500 text-sm rounded-lg p-2" maxlength="500" placeholder="CLT - Banco Itau
+Desenvolvedor de sistemas junior."></textarea>
+        </label>
+        <button
+          class="bg-green-500 hover:bg-green-700 transition rounded-xl p-3 text-white font-semibold w-full"
+          onclick="showPreview()"
+        >
+          Concluir
+        </button>
+        <div id="preview" class="fixed inset-0 bg-black/60 flex justify-center items-center p-4 backdrop-blur-sm z-50"
+          style="visibility: hidden">
+          
+          <div class="bg-stone-800 text-white p-6 rounded-xl w-full max-w-4xl shadow-lg flex flex-col gap-4 max-h-[90vh] overflow-auto">
+            
+            <h2 class="text-xl font-semibold">Pré-visualização do Currículo</h2>
+
+            <iframe src="./JS/preview.html" id="iframePreview" class="w-full h-[70vh] rounded-lg"></iframe>
+
+            <div class="flex gap-3">
+              <button class="bg-green-500 hover:bg-green-700 rounded-lg px-4 py-2" onclick="gerarPDF()">
+                Download
+              </button>
+              <button class="bg-red-600 hover:bg-red-700 rounded-lg px-4 py-2" onclick="hidePreview()">
+                Fechar
+              </button>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

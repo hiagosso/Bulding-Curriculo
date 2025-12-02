@@ -20,9 +20,8 @@
           Crie seu Currículo
         </h1>
         <button
-          class="bg-green-400 rounded-xl hover:bg-green-800 p-2 text-white w-full"
-          onclick="location.href='./editor/editor.html'"
-        >
+          class="bg-green-400 rounded-xl hover:bg-green-800 p-2 text-black w-full"
+          onclick="location.href='./editor/editor.html'"        >
           Começar
         </button>
       </div>
@@ -45,6 +44,75 @@
       </div>
     </footer>
   </body>
+
+<div id="photoModal"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center p-4 z-50"
+  style="visibility: hidden; opacity: 0; transition: 0.2s;"
+  onclick="closePhotoModal(event)"
+>
+  <div class="bg-white rounded-xl p-6 max-w-xl w-full shadow-lg"
+       onclick="event.stopPropagation()">
+
+    <h2 class="text-xl font-bold text-center mb-4 text-stone-800">
+      Escolha uma foto para usar
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      
+      <img
+        src="https://via.placeholder.com/300x200?text=FOTO+1"
+        onclick="selectPhoto('foto1')"
+        class="cursor-pointer rounded-lg border-4 border-transparent hover:border-green-500 hover:scale-105 transition w-full"
+      />
+
+      <img
+        src="https://via.placeholder.com/300x200?text=FOTO+2"
+        onclick="selectPhoto('foto2')"
+        class="cursor-pointer rounded-lg border-4 border-transparent hover:border-green-500 hover:scale-105 transition w-full"
+      />
+    </div>
+
+    <button
+      class="w-full mt-6 bg-red-600 text-white p-2 rounded-lg hover:bg-red-700"
+      onclick="forceClosePhotoModal()"
+    >
+      Fechar
+    </button>
+
+  </div>
+</div>
 </html>
 
 
+
+<script>
+  function openPhotoModal() {
+    const modal = document.getElementById("photoModal");
+    modal.style.visibility = "visible";
+    modal.style.opacity = "1";
+  }
+
+  function forceClosePhotoModal() {
+    const modal = document.getElementById("photoModal");
+    modal.style.opacity = "0";
+    setTimeout(() => (modal.style.visibility = "hidden"), 200);
+  }
+
+  // Fecha ao clicar fora do conteúdo
+  function closePhotoModal(event) {
+    if (event.target.id === "photoModal") {
+      forceClosePhotoModal();
+    }
+  }
+
+  function selectPhoto(photoId) {
+    alert("Você escolheu a " + photoId);
+    // Aqui você pode:
+    // - Salvar no localStorage
+    // - Alterar uma imagem da página
+    // - Preencher um campo do seu currículo
+    // - Fechar o modal automaticamente
+
+    forceClosePhotoModal();
+  }
+</script>

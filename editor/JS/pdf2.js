@@ -4,7 +4,14 @@ import { hidePreview } from './Preview.js';
 function gerarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  let y = 55; // posição inicial do conteúdo
+  let y = 55; // posição inicial
+
+  // --- NOVO: adicionar divisão vertical ---
+  function addVerticalDivider() {
+    doc.setLineWidth(1);
+    doc.setDrawColor(150, 150, 150);
+    doc.line(105, 10, 105, 290); // linha no meio da página
+  }
 
   // função para adicionar seções
   function addSection(titulo, conteudo) {
@@ -15,30 +22,25 @@ function gerarPDF() {
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(12);
-    let texto = doc.splitTextToSize(conteudo, 170); // quebra de linha automática
+    let texto = doc.splitTextToSize(conteudo, 170);
     doc.text(texto, 20, y);
-    y += texto.length * 7 + 5; // ajusta altura
+    y += texto.length * 7 + 5;
   }
 
-
-
-  // função para adicionar um divisor
   function addDivider() {
     doc.setLineWidth(0.5);
-    doc.setDrawColor(100, 100, 100); // cinza
-    doc.line(20, y, 190, y); // desenha a linha
-    y += 10; // pula espaço depois da linha
+    doc.setDrawColor(100, 100, 100);
+    doc.line(20, y, 190, y);
+    y += 10;
   }
 
-  //pega os valores
+  // campos do html
   const nome = document.getElementById("nome").value;
   const cidade = document.getElementById("Cidade").value;
   const telefone = formatarTelefone(document.getElementById("telefone").value);
   const email = document.getElementById("email").value;
   const linkdln = document.getElementById("Linkdln").value;
-  const linkdlnLink = document.getElementById("LinkdlnLink").value;
   const github = document.getElementById("Github").value;
-  const githubLink = document.getElementById("GithubLink").value;
   const objetivo = document.getElementById("Objetivo").value;
   const resumo = document.getElementById("resumo").value;
   const habilidades = document.getElementById("habilidades").value;
@@ -50,35 +52,22 @@ function gerarPDF() {
   doc.setFontSize(20);
   doc.text(nome, 20, 20);
 
-// Contatos
-doc.setFontSize(12);
-doc.setFont("helvetica", "normal");
+  // contatos
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "normal");
+  doc.text(`${cidade}`, 20, 30);
+  doc.text(`Telefone: ${telefone}`, 20, 37);
+  doc.text(`Email: ${email}`, 20, 44);
 
-y = 30;
-doc.text(`${cidade}`, 20, y);
-y += 7;
+  if (linkdln) doc.text(`LinkedIn: ${linkdln}`, 20, 51);
+  if (github) doc.text(`Github: ${github}`, 20, 58);
 
-doc.text(`Telefone: ${telefone}`, 20, y);
-y += 7;
+  // --- ADICIONA A LINHA VERTICAL NO MEIO ---
+  addVerticalDivider();
 
-doc.text(`Email: ${email}`, 20, y);
-y += 7;
+  y = 70;
 
-// LinkedIn se tiver nome E link
-if ((linkdln && linkdlnLink) || linkdln) {
-  doc.text("LinkedIn:", 20, y);
-  doc.textWithLink(linkdln, 38, y, { url: linkdlnLink });
-  y += 7;
-}
-
-// GitHub se tiver nome E link
-if ((github && githubLink) || github) {
-  doc.text("GitHub:", 20, y);
-  doc.textWithLink(github, 35, y, { url: githubLink });
-  y += 7;
-}
-
-  // adiciona seções
+  // seções
   addDivider();
   addSection("Objetivo", objetivo);
   addDivider();
@@ -88,19 +77,15 @@ if ((github && githubLink) || github) {
   addDivider();
   addSection("Formação", formacao);
 
-  // adiciona seção de experiência se houver conteúdo
   if (experiencia) {
     addDivider();
     addSection("Experiências", experiencia);
   }
 
-
-  // salva PDF
   doc.save("curriculo.pdf");
   hidePreview();
 }
 
-// Expor a função para o escopo global para chamadas inline no HTML
 window.gerarPDF = gerarPDF;
 
 const downloadBtn = document.getElementById('download');
