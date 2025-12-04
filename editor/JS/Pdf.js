@@ -86,7 +86,9 @@ if ((github && githubLink) || github) {
   addDivider();
   addSection("Habilidades", habilidades);
   addDivider();
-  addSection("Formação", formacao);
+  if(formacao){
+    addSection("Formação", formacao);
+  }
 
   // adiciona seção de experiência se houver conteúdo
   if (experiencia) {
